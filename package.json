@@ -1,0 +1,29 @@
+{
+  "name": "cli-ansi",
+  "version": "1.0.1",
+  "description": "Some scripts to help with creating CLI colors, animations, and text alignment. ",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jasonbyrne/cli-ansi.git"
+  },
+  "keywords": [
+    "cli",
+    "ansi",
+    "align",
+    "colors",
+    "animation"
+  ],
+  "author": "Jason Byrne <jason.byrne@flosports.tv>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jasonbyrne/cli-ansi/issues"
+  },
+  "homepage": "https://github.com/jasonbyrne/cli-ansi#readme",
+  "devDependencies": {
+    "prettier": "^2.0.5"
+  }
+}
