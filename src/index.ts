@@ -315,6 +315,10 @@ export default class CliAnsi {
     }
   }
 
+  public static highlight(str: string) {
+    return CliAnsi.inverse(str);
+  }
+
   public static bgBlue(str: string) {
     return CliAnsi._bg(BG_BLUE, str);
   }
