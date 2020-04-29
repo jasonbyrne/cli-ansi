@@ -1,101 +1,105 @@
-const ESC: string = "\x1b[";
+export const ESC: string = "\x1b[";
 
-const CURSOR_UP: string = "A";
-const CURSOR_DOWN: string = "B";
-const CURSOR_RIGHT: string = "C";
-const CURSOR_LEFT: string = "D";
-const NEXT_LINE: string = "E";
-const PREV_LINE: string = "F";
-const CURSOR_MOVE_TO_X: string = "G";
-const CURSOR_MOVE_TO: string = "H";
-const CURSOR_REPORT_POS: string = "R";
-const SCROLL_UP: string = "S";
-const SCROLL_DOWN: string = "T";
-const CURSOR_SAVE_POS: string = "s";
-const CURSOR_RESTORE_POS: string = "u";
-const CURSOR_QUERY_POS: string = "6n";
-const CURSOR_HIDE: string = "?25l";
-const CURSOR_SHOW: string = "?25h";
-const ERASE_DOWN: string = "J";
-const ERASE_UP: string = "1J";
-const ERASE_SCREEN: string = "2J";
-const ERASE_END_LINE: string = "K";
-const ERASE_START_LINE: string = "1K";
-const ERASE_LINE: string = "2K";
+export const CURSOR_UP: string = "A";
+export const CURSOR_DOWN: string = "B";
+export const CURSOR_RIGHT: string = "C";
+export const CURSOR_LEFT: string = "D";
+export const NEXT_LINE: string = "E";
+export const PREV_LINE: string = "F";
+export const CURSOR_MOVE_TO_X: string = "G";
+export const CURSOR_MOVE_TO: string = "H";
+export const CURSOR_REPORT_POS: string = "R";
+export const SCROLL_UP: string = "S";
+export const SCROLL_DOWN: string = "T";
+export const CURSOR_SAVE_POS: string = "s";
+export const CURSOR_RESTORE_POS: string = "u";
+export const CURSOR_QUERY_POS: string = "6n";
+export const CURSOR_HIDE: string = "?25l";
+export const CURSOR_SHOW: string = "?25h";
+export const ERASE_DOWN: string = "J";
+export const ERASE_UP: string = "1J";
+export const ERASE_SCREEN: string = "2J";
+export const ERASE_END_LINE: string = "K";
+export const ERASE_START_LINE: string = "1K";
+export const ERASE_LINE: string = "2K";
 
-const FG_BLACK: string = "30m";
-const FG_RED: string = "31m";
-const FG_GREEN: string = "32m";
-const FG_YELLOW: string = "33m";
-const FG_BLUE: string = "34m";
-const FG_MAGENTA: string = "35m";
-const FG_CYAN: string = "36m";
-const FG_WHITE: string = "37m";
-const FG_RGB: string = "38;2;";
-const FG_CUSTOM: string = "38;5;";
-const FG_DEFAULT: string = "39m";
+export const FG_BLACK: string = "30m";
+export const FG_RED: string = "31m";
+export const FG_GREEN: string = "32m";
+export const FG_YELLOW: string = "33m";
+export const FG_BLUE: string = "34m";
+export const FG_MAGENTA: string = "35m";
+export const FG_CYAN: string = "36m";
+export const FG_WHITE: string = "37m";
+export const FG_RGB: string = "38;2;";
+export const FG_CUSTOM: string = "38;5;";
+export const FG_DEFAULT: string = "39m";
 
-const BG_BLACK: string = "40m";
-const BG_RED: string = "41m";
-const BG_GREEN: string = "42m";
-const BG_YELLOW: string = "43m";
-const BG_BLUE: string = "44m";
-const BG_MAGENTA: string = "45m";
-const BG_CYAN: string = "46m";
-const BG_WHITE: string = "47m";
-const BG_RGB: string = "48;2;";
-const BG_CUSTOM: string = "48;5;";
-const BG_DEFAULT: string = "49m";
+export const BG_BLACK: string = "40m";
+export const BG_RED: string = "41m";
+export const BG_GREEN: string = "42m";
+export const BG_YELLOW: string = "43m";
+export const BG_BLUE: string = "44m";
+export const BG_MAGENTA: string = "45m";
+export const BG_CYAN: string = "46m";
+export const BG_WHITE: string = "47m";
+export const BG_RGB: string = "48;2;";
+export const BG_CUSTOM: string = "48;5;";
+export const BG_DEFAULT: string = "49m";
 
-const FONT_BOLD: string = "1m";
-const FONT_LIGHT: string = "2m";
-const FONT_ITALIC: string = "3m";
-const FONT_UNDERLINED: string = "4m";
-const FONT_BLINK: string = "5m";
-const FONT_FAST_BLINK: string = "6m";
-const FONT_INVERSE: string = "7m";
-const FONT_HIDDEN: string = "8m";
-const FONT_STRIKETHROUGH: string = "9m";
-const FONT_BORDER: string = "51m";
-const FONT_ROUNDED_BORDER: string = "52m";
-const FONT_OVERLINE: string = "53m";
+export const FONT_BOLD: string = "1m";
+export const FONT_LIGHT: string = "2m";
+export const FONT_ITALIC: string = "3m";
+export const FONT_UNDERLINED: string = "4m";
+export const FONT_BLINK: string = "5m";
+export const FONT_FAST_BLINK: string = "6m";
+export const FONT_INVERSE: string = "7m";
+export const FONT_HIDDEN: string = "8m";
+export const FONT_STRIKETHROUGH: string = "9m";
+export const FONT_BORDER: string = "51m";
+export const FONT_ROUNDED_BORDER: string = "52m";
+export const FONT_OVERLINE: string = "53m";
 
-const FONT_RESET: string = "0m";
-const FONT_END_BOLD: string = "21m";
-const FONT_END_LIGHT: string = "22m";
-const FONT_END_ITALIC: string = "23m";
-const FONT_END_UNDERLINED: string = "24m";
-const FONT_END_BLINK: string = "25m";
-const FONT_END_FAST_BLINK: string = "26m";
-const FONT_END_INVERSE: string = "27m";
-const FONT_END_HIDDEN: string = "28m";
-const FONT_END_STRIKETHROUGH: string = "29m";
-const FONT_END_BORDER: string = "54m";
-const FONT_END_OVERLINE: string = "54m";
+export const FONT_RESET: string = "0m";
+export const FONT_END_BOLD: string = "21m";
+export const FONT_END_LIGHT: string = "22m";
+export const FONT_END_ITALIC: string = "23m";
+export const FONT_END_UNDERLINED: string = "24m";
+export const FONT_END_BLINK: string = "25m";
+export const FONT_END_FAST_BLINK: string = "26m";
+export const FONT_END_INVERSE: string = "27m";
+export const FONT_END_HIDDEN: string = "28m";
+export const FONT_END_STRIKETHROUGH: string = "29m";
+export const FONT_END_BORDER: string = "54m";
+export const FONT_END_OVERLINE: string = "54m";
 
-export default class CliAnsi {
+export default class Ansi {
   private static _bg(color: string, str: string) {
-    return `${ESC}${color}${str}${CliAnsi.bgReset}`;
+    return `${Ansi.esc(color)}${str}${Ansi.bgReset}`;
   }
 
   private static _fg(color: string, str: string) {
-    return `${ESC}${color}${str}${CliAnsi.fgReset}`;
+    return `${Ansi.esc(color)}${str}${Ansi.fgReset}`;
   }
 
   public static get fgReset(): string {
-    return `${ESC}${FG_DEFAULT}`;
+    return Ansi.esc(FG_DEFAULT);
   }
 
   public static get bgReset(): string {
-    return `${ESC}${BG_DEFAULT}`;
+    return Ansi.esc(BG_DEFAULT);
+  }
+
+  public static esc(value: string) {
+    return `${ESC}${value}`;
   }
 
   public static get startInverse(): string {
-    return `${ESC}${FONT_INVERSE}`;
+    return Ansi.esc(FONT_INVERSE);
   }
 
   public static get endInverse(): string {
-    return `${ESC}${FONT_END_INVERSE}`;
+    return Ansi.esc(FONT_END_INVERSE);
   }
 
   public static getArrayIfLineBreaks(
@@ -123,12 +127,12 @@ export default class CliAnsi {
   }
 
   public static writeLine(...args: string[]) {
-    CliAnsi.write.apply(this, args.concat(["\n"]));
+    Ansi.write.apply(this, args.concat(["\n"]));
   }
 
   public static writeLines(...args: string[]) {
     args.forEach((arg) => {
-      CliAnsi.writeLine(arg);
+      Ansi.writeLine(arg);
     });
   }
 
@@ -143,7 +147,7 @@ export default class CliAnsi {
   }
 
   public static cursorMove(x: number, y: number): string {
-    return CliAnsi.cursorMoveX(x) + CliAnsi.cursorMoveY(y);
+    return Ansi.cursorMoveX(x) + Ansi.cursorMoveY(y);
   }
 
   public static cursorMoveX(x: number): string {
@@ -219,9 +223,9 @@ export default class CliAnsi {
   public static eraseLines(numLines: number) {
     let clear = "";
     for (let i = 0; i < numLines; i++) {
-      clear += CliAnsi.eraseLine();
+      clear += Ansi.eraseLine();
       if (i < numLines - 1) {
-        clear += CliAnsi.cursorUp();
+        clear += Ansi.cursorUp();
       }
     }
     return clear;
@@ -248,7 +252,7 @@ export default class CliAnsi {
   }
 
   public static inverse(str: string) {
-    return `${CliAnsi.startInverse}${str}${CliAnsi.endInverse}`;
+    return `${Ansi.startInverse}${str}${Ansi.endInverse}`;
   }
 
   public static border(str: string) {
@@ -272,7 +276,7 @@ export default class CliAnsi {
     targetLength?: number,
     padChar: string = " "
   ): string {
-    content = CliAnsi.getArrayIfLineBreaks(content);
+    content = Ansi.getArrayIfLineBreaks(content);
     if (typeof content === "string") {
       const regex: RegExp = new RegExp(`${ESC}[^m]+m`, "g");
       const len: number = content.replace(regex, "").length;
@@ -281,9 +285,9 @@ export default class CliAnsi {
       const padRight: number = Math.max(0, Math.ceil((targetLength - len) / 2));
       return `${padChar.repeat(padLeft)}${content}${padChar.repeat(padRight)}`;
     } else {
-      targetLength = targetLength || CliAnsi.getLongestLine(content);
+      targetLength = targetLength || Ansi.getLongestLine(content);
       content = content.map((line) => {
-        return CliAnsi.center(line, targetLength, padChar);
+        return Ansi.center(line, targetLength, padChar);
       });
       return content.join("\n");
     }
@@ -294,7 +298,7 @@ export default class CliAnsi {
     targetLength?: number,
     padChar: string = " "
   ): string {
-    content = CliAnsi.getArrayIfLineBreaks(content);
+    content = Ansi.getArrayIfLineBreaks(content);
     if (typeof content === "string") {
       const regex: RegExp = new RegExp(`${ESC}[^m]+m`, "g");
       const len: number = content.replace(regex, "").length;
@@ -302,9 +306,9 @@ export default class CliAnsi {
       const padding: number = Math.max(targetLength - len, 1);
       return `${content}${padChar.repeat(padding)}`;
     } else {
-      targetLength = targetLength || CliAnsi.getLongestLine(content);
+      targetLength = targetLength || Ansi.getLongestLine(content);
       content = content.map((line) => {
-        return CliAnsi.left(line, targetLength, padChar);
+        return Ansi.left(line, targetLength, padChar);
       });
       return content.join("\n");
     }
@@ -315,7 +319,7 @@ export default class CliAnsi {
     targetLength?: number,
     padChar: string = " "
   ): string {
-    content = CliAnsi.getArrayIfLineBreaks(content);
+    content = Ansi.getArrayIfLineBreaks(content);
     if (typeof content === "string") {
       const regex: RegExp = new RegExp(`${ESC}[^m]+m`, "g");
       const len: number = content.replace(regex, "").length;
@@ -323,95 +327,95 @@ export default class CliAnsi {
       const padding: number = targetLength - len;
       return `${padChar.repeat(padding)}${content}`;
     } else {
-      targetLength = targetLength || CliAnsi.getLongestLine(content);
+      targetLength = targetLength || Ansi.getLongestLine(content);
       content = content.map((line) => {
-        return CliAnsi.right(line, targetLength, padChar);
+        return Ansi.right(line, targetLength, padChar);
       });
       return content.join("\n");
     }
   }
 
   public static highlight(str: string) {
-    return CliAnsi.inverse(str);
+    return Ansi.inverse(str);
   }
 
   public static bgBlue(str: string) {
-    return CliAnsi._bg(BG_BLUE, str);
+    return Ansi._bg(BG_BLUE, str);
   }
 
   public static bgBlack(str: string) {
-    return CliAnsi._bg(BG_BLACK, str);
+    return Ansi._bg(BG_BLACK, str);
   }
 
   public static bgCyan(str: string) {
-    return CliAnsi._bg(BG_CYAN, str);
+    return Ansi._bg(BG_CYAN, str);
   }
 
   public static bgGreen(str: string) {
-    return CliAnsi._bg(BG_GREEN, str);
+    return Ansi._bg(BG_GREEN, str);
   }
 
   public static bgMagenta(str: string) {
-    return CliAnsi._bg(BG_MAGENTA, str);
+    return Ansi._bg(BG_MAGENTA, str);
   }
 
   public static bgRed(str: string) {
-    return CliAnsi._bg(BG_RED, str);
+    return Ansi._bg(BG_RED, str);
   }
 
   public static bgWhite(str: string) {
-    return CliAnsi._bg(BG_WHITE, str);
+    return Ansi._bg(BG_WHITE, str);
   }
 
   public static bgYellow(str: string) {
-    return CliAnsi._bg(BG_YELLOW, str);
+    return Ansi._bg(BG_YELLOW, str);
   }
 
   public static bgRgb(str: string, r: number, g: number, b: number) {
-    return `${ESC}${BG_RGB}${r};${g};${b}m${str}${CliAnsi.bgReset}`;
+    return `${ESC}${BG_RGB}${r};${g};${b}m${str}${Ansi.bgReset}`;
   }
 
   public static bgCustom(str: string, colorNumber: number) {
-    return `${ESC}${BG_CUSTOM}${colorNumber}m${str}${CliAnsi.bgReset}`;
+    return `${ESC}${BG_CUSTOM}${colorNumber}m${str}${Ansi.bgReset}`;
   }
 
   public static fgBlue(str: string) {
-    return CliAnsi._fg(FG_BLUE, str);
+    return Ansi._fg(FG_BLUE, str);
   }
 
   public static fgBlack(str: string) {
-    return CliAnsi._fg(FG_BLACK, str);
+    return Ansi._fg(FG_BLACK, str);
   }
 
   public static fgCyan(str: string) {
-    return CliAnsi._fg(FG_CYAN, str);
+    return Ansi._fg(FG_CYAN, str);
   }
 
   public static fgGreen(str: string) {
-    return CliAnsi._fg(FG_GREEN, str);
+    return Ansi._fg(FG_GREEN, str);
   }
 
   public static fgMagenta(str: string) {
-    return CliAnsi._fg(FG_MAGENTA, str);
+    return Ansi._fg(FG_MAGENTA, str);
   }
 
   public static fgRed(str: string) {
-    return CliAnsi._fg(FG_RED, str);
+    return Ansi._fg(FG_RED, str);
   }
 
   public static fgWhite(str: string) {
-    return CliAnsi._fg(FG_WHITE, str);
+    return Ansi._fg(FG_WHITE, str);
   }
 
   public static fgYellow(str: string) {
-    return CliAnsi._fg(FG_YELLOW, str);
+    return Ansi._fg(FG_YELLOW, str);
   }
 
   public static fgRgb(str: string, r: number, g: number, b: number) {
-    return `${ESC}${FG_RGB}${r};${g};${b}m${str}${CliAnsi.fgReset}`;
+    return `${ESC}${FG_RGB}${r};${g};${b}m${str}${Ansi.fgReset}`;
   }
 
   public static fgCustom(str: string, colorNumber: number) {
-    return `${ESC}${FG_CUSTOM}${colorNumber}m${str}${CliAnsi.fgReset}`;
+    return `${ESC}${FG_CUSTOM}${colorNumber}m${str}${Ansi.fgReset}`;
   }
 }
