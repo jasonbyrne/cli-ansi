@@ -1,6 +1,6 @@
 {
   "name": "cli-ansi",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Some scripts to help with creating CLI colors, animations, and text alignment. ",
   "main": "dist/index.js",
   "scripts": {

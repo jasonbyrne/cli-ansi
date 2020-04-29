@@ -75,11 +75,27 @@ const FONT_END_OVERLINE: string = "54m";
 
 export default class CliAnsi {
   private static _bg(color: string, str: string) {
-    return `${ESC}${color}${str}${ESC}${BG_DEFAULT}`;
+    return `${ESC}${color}${str}${CliAnsi.bgReset}`;
   }
 
   private static _fg(color: string, str: string) {
-    return `${ESC}${color}${str}${ESC}${FG_DEFAULT}`;
+    return `${ESC}${color}${str}${CliAnsi.fgReset}`;
+  }
+
+  public static get fgReset(): string {
+    return `${ESC}${FG_DEFAULT}`;
+  }
+
+  public static get bgReset(): string {
+    return `${ESC}${BG_DEFAULT}`;
+  }
+
+  public static get startInverse(): string {
+    return `${ESC}${FONT_INVERSE}`;
+  }
+
+  public static get endInverse(): string {
+    return `${ESC}${FONT_END_INVERSE}`;
   }
 
   public static getArrayIfLineBreaks(
@@ -232,7 +248,7 @@ export default class CliAnsi {
   }
 
   public static inverse(str: string) {
-    return `${ESC}${FONT_INVERSE}${str}${ESC}${FONT_END_INVERSE}`;
+    return `${CliAnsi.startInverse}${str}${CliAnsi.endInverse}`;
   }
 
   public static border(str: string) {
@@ -352,11 +368,11 @@ export default class CliAnsi {
   }
 
   public static bgRgb(str: string, r: number, g: number, b: number) {
-    return `${ESC}${BG_RGB}${r};${g};${b}m${str}${ESC}${BG_DEFAULT}`;
+    return `${ESC}${BG_RGB}${r};${g};${b}m${str}${CliAnsi.bgReset}`;
   }
 
   public static bgCustom(str: string, colorNumber: number) {
-    return `${ESC}${BG_CUSTOM}${colorNumber}m${str}${ESC}${BG_DEFAULT}`;
+    return `${ESC}${BG_CUSTOM}${colorNumber}m${str}${CliAnsi.bgReset}`;
   }
 
   public static fgBlue(str: string) {
@@ -392,10 +408,10 @@ export default class CliAnsi {
   }
 
   public static fgRgb(str: string, r: number, g: number, b: number) {
-    return `${ESC}${FG_RGB}${r};${g};${b}m${str}${ESC}${FG_DEFAULT}`;
+    return `${ESC}${FG_RGB}${r};${g};${b}m${str}${CliAnsi.fgReset}`;
   }
 
   public static fgCustom(str: string, colorNumber: number) {
-    return `${ESC}${FG_CUSTOM}${colorNumber}m${str}${ESC}${FG_DEFAULT}`;
+    return `${ESC}${FG_CUSTOM}${colorNumber}m${str}${CliAnsi.fgReset}`;
   }
 }
