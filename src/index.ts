@@ -371,8 +371,33 @@ export default class Ansi {
     return Ansi._bg(BG_YELLOW, str);
   }
 
-  public static bgRgb(str: string, r: number, g: number, b: number) {
-    return `${ESC}${BG_RGB}${r};${g};${b}m${str}${Ansi.bgReset}`;
+  public static bgRgb(str: string, r: number, g: number, b: number): string;
+  public static bgRgb(str: string, rgb: [number, number, number]): string;
+  public static bgRgb(
+    str: string,
+    r: number | [number, number, number],
+    g?: number,
+    b?: number
+  ) {
+    if (typeof r !== "number") {
+      return `${Ansi.startBgRgb(r)}${str}${Ansi.bgReset}`;
+    } else {
+      return `${Ansi.startBgRgb(r, g || 0, b || 0)}${str}${Ansi.bgReset}`;
+    }
+  }
+
+  public static startBgRgb(r: number, g: number, b: number): string;
+  public static startBgRgb(rgb: [number, number, number]): string;
+  public static startBgRgb(
+    r: number | [number, number, number],
+    g?: number,
+    b?: number
+  ): string {
+    if (g !== undefined) {
+      return Ansi.esc(`${BG_RGB}${r};${g};${b}m`);
+    } else {
+      return Ansi.esc(`${BG_RGB}${r[0]};${r[1]};${r[2]}m`);
+    }
   }
 
   public static bgCustom(str: string, colorNumber: number) {
@@ -411,8 +436,33 @@ export default class Ansi {
     return Ansi._fg(FG_YELLOW, str);
   }
 
-  public static fgRgb(str: string, r: number, g: number, b: number) {
-    return `${ESC}${FG_RGB}${r};${g};${b}m${str}${Ansi.fgReset}`;
+  public static startFgRgb(r: number, g: number, b: number): string;
+  public static startFgRgb(rgb: [number, number, number]): string;
+  public static startFgRgb(
+    r: [number, number, number] | number,
+    g?: number,
+    b?: number
+  ): string {
+    if (g !== undefined) {
+      return Ansi.esc(`${FG_RGB}${r};${g};${b}m`);
+    } else {
+      return Ansi.esc(`${FG_RGB}${r[0]};${r[1]};${r[2]}m`);
+    }
+  }
+
+  public static fgRgb(str: string, r: number, g: number, b: number): string;
+  public static fgRgb(str: string, rgb: [number, number, number]): string;
+  public static fgRgb(
+    str: string,
+    r: number | [number, number, number],
+    g?: number,
+    b?: number
+  ) {
+    if (typeof r !== "number") {
+      return `${Ansi.startFgRgb(r)}${str}${Ansi.fgReset}`;
+    } else {
+      return `${Ansi.startFgRgb(r, g || 0, b || 0)}${str}${Ansi.fgReset}`;
+    }
   }
 
   public static fgCustom(str: string, colorNumber: number) {
