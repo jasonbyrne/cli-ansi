@@ -90,6 +90,10 @@ export default class Ansi {
     return Ansi.esc(BG_DEFAULT);
   }
 
+  public static get fontReset(): string {
+    return Ansi.esc(FONT_RESET);
+  }
+
   public static esc(value: string) {
     return `${ESC}${value}`;
   }
@@ -108,6 +112,10 @@ export default class Ansi {
     return typeof content === "string" && content.includes("\n")
       ? content.split("\n")
       : content;
+  }
+
+  public static reset() {
+    return `${this.fontReset}${this.bgReset}${this.fgReset}`;
   }
 
   public static getLongestLine(content: string[]): number {
